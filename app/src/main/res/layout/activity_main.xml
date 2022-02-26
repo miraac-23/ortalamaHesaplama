@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <AutoCompleteTextView
+            android:id="@+id/etLesson"
+            android:layout_width="248dp"
+            android:layout_height="57dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:hint="Search Lesson"
+            android:textColorHint="@color/white"
+            android:popupBackground="@color/colorAccent"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Spinner
+            android:id="@+id/spnLessonCredit"
+            android:layout_width="131dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            android:entries="@array/Credits"
+            android:popupBackground="@color/colorAccent"
+            android:backgroundTint="@color/colorAccent"
+            app:layout_constraintEnd_toStartOf="@+id/spnLessonGrade"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etLesson" />
+        <Spinner
+            android:id="@+id/spnLessonGrade"
+            android:layout_width="131dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="24dp"
+            android:entries="@array/tumNotlar"
+            android:popupBackground="@color/colorAccent"
+            android:backgroundTint="@color/colorAccent"
+            app:layout_constraintEnd_toStartOf="@+id/btnAdd"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/spnLessonCredit"
+            app:layout_constraintTop_toBottomOf="@+id/etLesson" />
+
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/btnadd"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/etLesson"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@color/colorAccent">
+
+    </View>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:id="@+id/scroolview">
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           android:id="@+id/rootLayout">
+
+       </LinearLayout>
+
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btnCalculate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:onClick="ortalamaHesapla"
+        android:shadowColor="@color/colorAccent"
+        android:text="CALCULATE"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:strokeColor="@color/colorAccent"
+        tools:text="calculate">
+
+    </Button>
+</LinearLayout>
